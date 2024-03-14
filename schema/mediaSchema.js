@@ -7,22 +7,20 @@ const mediaSchema = new Schema({
         required: true,
         trim: true,
     },
-    description: {
+    photographer: {
        type: String,
        trim: true,
        required: true
     },
-    thumble: {
+    image: {
         type: String,
         trim: true,
         required: true,
     },
-    totalLiked: {
+    totalLike: {
        type: Number,       
     },   
-    comments: [
-      {type: mongoose.Types.ObjectId, ref: "Comment"}
-    ],
+    comments: {type: Array},
 });
 
 const Media = mongoose.model('Media', mediaSchema);
