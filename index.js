@@ -8,11 +8,20 @@ const bodyParser = require("body-parser");
 const mediaRoute = require("./Router/mediaRoute");
 const mongoose = require("mongoose")
 
+
+const corsOptions = {
+    // origin: "https://walmart-272ed.web.app",
+    origin: "*",
+    credentials: true,
+    optionSuccessStatus: 200
+
+  };
 // Middleware 
 
 app.use(express.json())
 app.use(bodyParser.json())
-app.use(cors())
+
+app.use(cors(corsOptions))
 
 const connentDatabase = async () =>{
     try {
